@@ -1,0 +1,30 @@
+
+FUNCTION isPalindrome(strg: STRING, start, end: INTEGER) : INTEGER
+BEGIN
+    IF (start >= end ) THEN
+        RETURN 1
+    ELSE_IF (strg[start] ≠ strg[end]) THEN
+        RETURN 0
+    ELSE
+        RETURN isPalindrome(strg, start + 1, end - 1)
+    END_IF
+
+END
+
+VAR
+    strg : STRING
+BEGIN
+
+    Write("Entrer un mot")
+    Read (strg)
+    start = 0
+    end  = strg.lenght-1
+
+    IF (isPalindrome(strg, start, end) == 1) THEN
+        Write("Le mot est un palindrome.")
+    ELSE
+        Write("Le mot n'est pas un palindrome.")
+    END_IF
+
+
+END
